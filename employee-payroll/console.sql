@@ -33,3 +33,13 @@ WHERE name = 'Paresh';
 SELECT name
 FROM employee_payroll
 WHERE start_date BETWEEN CAST('2021-06-30' AS DATE) AND DATE(NOW());
+
+#Use-Case-6
+ALTER TABLE employee_payroll
+    ADD gender CHAR(1) NOT NULL;
+UPDATE employee_payroll
+SET gender='F'
+WHERE name = 'Poonam';
+UPDATE employee_payroll
+SET gender='M'
+WHERE name != 'Poonam';
