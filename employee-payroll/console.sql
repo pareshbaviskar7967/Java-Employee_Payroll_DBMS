@@ -21,3 +21,7 @@ VALUES ('Paresh', 80000, '2021-06-25'),
        ('Poonam', 99000, '2021-07-05'),
        ('Pratham', 70000, '2021-07-01'),
        ('Rutuja', 65000, '2021-07-06');
+
+#Use-Case-4
+SELECT *
+FROM employee_payroll;
