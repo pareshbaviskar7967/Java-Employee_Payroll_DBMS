@@ -43,3 +43,21 @@ WHERE name = 'Poonam';
 UPDATE employee_payroll
 SET gender='M'
 WHERE name != 'Poonam';
+
+#Use-Case-7
+SELECT SUM(salary)
+FROM employee_payroll
+WHERE gender = 'M'
+GROUP BY gender;
+SELECT AVG(salary)
+FROM employee_payroll
+WHERE gender = 'F'
+GROUP BY gender;
+SELECT COUNT(name)
+FROM employee_payroll
+WHERE gender = 'M'
+GROUP BY gender;
+SELECT MIN(salary)
+FROM employee_payroll;
+SELECT MAX(salary)
+FROM employee_payroll;
