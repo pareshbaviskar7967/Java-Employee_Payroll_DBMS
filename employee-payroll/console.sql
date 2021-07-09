@@ -107,3 +107,16 @@ WHERE name = 'Pratham';
 UPDATE employee_payroll
 SET department = 'HR'
 WHERE name = 'Rutuja';
+
+#Use-Case-9
+ALTER TABLE employee_payroll
+    ADD basic_pay FLOAT NOT NULL;
+ALTER TABLE employee_payroll
+    ADD deduction FLOAT NOT NULL;
+ALTER TABLE employee_payroll
+    ADD taxable FLOAT NOT NULL;
+ALTER TABLE employee_payroll
+    ADD incometax FLOAT NOT NULL;
+ALTER TABLE employee_payroll
+    ADD net_pay FLOAT NOT NULL;
+DESC employee_payroll;
