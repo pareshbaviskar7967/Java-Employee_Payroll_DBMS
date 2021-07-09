@@ -25,3 +25,11 @@ VALUES ('Paresh', 80000, '2021-06-25'),
 #Use-Case-4
 SELECT *
 FROM employee_payroll;
+
+#Use-Case-5
+SELECT salary
+FROM employee_payroll
+WHERE name = 'Paresh';
+SELECT name
+FROM employee_payroll
+WHERE start_date BETWEEN CAST('2021-06-30' AS DATE) AND DATE(NOW());
