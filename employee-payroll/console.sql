@@ -158,3 +158,20 @@ VALUES (15, 'Paresh', 'M', '8408025874', 'Jalgaon'),
        (18, 'Ashwini', 'F', '7894595441', 'Dhule'),
        (19, 'Poonam', 'F', '9638595441', 'Nagpur'),
        (20, 'Rahul', 'M', '8523595441', 'Nashik');
+
+#Use-Case-11
+CREATE TABLE employee_department
+(
+    ID         INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    EmployeeId INT         NOT NULL,
+    Department VARCHAR(50) NOT NULL,
+    FOREIGN KEY (EmployeeId) REFERENCES employee_details (EmployeeID)
+);
+INSERT INTO employee_department (EmployeeId, Department)
+VALUES (15, 'HR'),
+       (16, 'IT'),
+       (17, 'QA'),
+       (18, 'DBA'),
+       (19, 'HR'),
+       (20, 'RPA');
+
