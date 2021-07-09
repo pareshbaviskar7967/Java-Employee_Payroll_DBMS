@@ -61,3 +61,49 @@ SELECT MIN(salary)
 FROM employee_payroll;
 SELECT MAX(salary)
 FROM employee_payroll;
+
+#Use-Case-8
+ALTER TABLE employee_payroll
+    ADD phone_no INT NOT NULL;
+UPDATE employee_payroll
+SET phone_no = '1234567899'
+WHERE name = 'Paresh';
+UPDATE employee_payroll
+SET phone_no = '1234567874'
+WHERE name = 'Atharva';
+UPDATE employee_payroll
+SET phone_no = '1234567878'
+WHERE name = 'Rahul';
+UPDATE employee_payroll
+SET phone_no = '1234567855'
+WHERE name = 'Poonam';
+UPDATE employee_payroll
+SET phone_no = '1234567869'
+WHERE name = 'Pratham';
+UPDATE employee_payroll
+SET phone_no = '1234567555'
+WHERE name = 'Rutuja';
+SELECT *
+FROM employee_payroll;
+ALTER TABLE employee_payroll
+    ADD address VARCHAR(100) NOT NULL DEFAULT 'Jalgaon, Maharashtra';
+ALTER TABLE employee_payroll
+    ADD department VARCHAR(10) NOT NULL;
+UPDATE employee_payroll
+SET department = 'IT'
+WHERE name = 'Paresh';
+UPDATE employee_payroll
+SET department = 'Finance'
+WHERE name = 'Atharva';
+UPDATE employee_payroll
+SET department = 'HR'
+WHERE name = 'Rahul';
+UPDATE employee_payroll
+SET department = 'Prodcution'
+WHERE name = 'Poonam';
+UPDATE employee_payroll
+SET department = 'IT'
+WHERE name = 'Pratham';
+UPDATE employee_payroll
+SET department = 'HR'
+WHERE name = 'Rutuja';
