@@ -120,3 +120,41 @@ ALTER TABLE employee_payroll
 ALTER TABLE employee_payroll
     ADD net_pay FLOAT NOT NULL;
 DESC employee_payroll;
+
+#Use-Case-10
+DROP TABLE employee_payroll;
+CREATE TABLE employee_payroll
+(
+    ID        INT   NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Basic     FLOAT NOT NULL,
+    Deduction FLOAT NOT NULL,
+    Taxable   FLOAT NOT NULL,
+    Incometax FLOAT NOT NULL,
+    Net       FLOAT NOT NULL,
+    Started   DATE  NOT NULL
+);
+INSERT INTO employee_payroll (Basic, Deduction, Taxable, Incometax, Net, Started)
+VALUES (30000.0, 2000.0, 28000.0, 1000.0, 27000.0, '2021-06-25'),
+       (35000.0, 2000.0, 33000.0, 1000.0, 32000.0, '2021-06-30'),
+       (40000.0, 2500.0, 37500.0, 1500.0, 36000.0, '2021-07-03'),
+       (25000.0, 1500.0, 23500.0, 500.0, 23000.0, '2021-06-01'),
+       (38000.0, 2500.0, 34500.0, 1500.0, 34000.0, '2021-07-08'),
+       (36000.0, 1500.0, 30000.0, 500.0, 30000.0, '2021-07-07');
+SELECT *
+FROM employee_payroll;
+CREATE TABLE Employee_Details
+(
+    EmployeeID INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Name       VARCHAR(50) NOT NULL,
+    Gender     CHAR        NOT NULL,
+    Contact    VARCHAR(10) NOT NULL,
+    Address    VARCHAR(50) NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES employee_payroll (ID)
+);
+INSERT INTO Employee_Details (EmployeeID, Name, Gender, Contact, Address)
+VALUES (15, 'Paresh', 'M', '8408025874', 'Jalgaon'),
+       (16, 'Ganesh', 'M', '8408078965', 'Mumbai'),
+       (17, 'Rutuja', 'F', '9521495441', 'Pune'),
+       (18, 'Ashwini', 'F', '7894595441', 'Dhule'),
+       (19, 'Poonam', 'F', '9638595441', 'Nagpur'),
+       (20, 'Rahul', 'M', '8523595441', 'Nashik');
